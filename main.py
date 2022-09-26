@@ -13,7 +13,6 @@ scheduler = sched.scheduler(time.time, time.sleep)
 def check_nwk_connection():
     """
     Check the internet connection by getting status of google and yahoo.
-    They can't be down at the same time, right?
     """
     g = fetch_status('http://google.com')
     a = fetch_status('http://apple.com')
@@ -25,7 +24,7 @@ def check_nwk_connection():
 
 def fetch_status(url):
     """
-    Open rl and check the response
+    Open url and check the response
     If else we conclude that the server is down.
     """
     url = add_https(url)
